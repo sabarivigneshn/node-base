@@ -1,0 +1,13 @@
+<EntityDescriptor
+ xmlns:md="urn:oasis:names:tc:SAML:2.0:metadata"
+ xmlns:saml="urn:oasis:names:tc:SAML:2.0:assertion"
+ xmlns:ds="http://www.w3.org/2000/09/xmldsig#"
+ entityID="baseUrl/saml/metadata">
+ <!-- WantAssertionsSigned="true" AuthnRequestsSigned="true" -->
+    <SPSSODescriptor protocolSupportEnumeration="urn:oasis:names:tc:SAML:2.0:protocol">
+        <NameIDFormat>urn:oasis:names:tc:SAML:1.1:nameid-format:emailAddress</NameIDFormat>
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-Redirect" Location="http://localhost:3000/saml/SSOlogout" />
+        <SingleLogoutService Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="http://localhost:3000/saml/SSOlogout" />
+        <AssertionConsumerService isDefault="true" index="0" Binding="urn:oasis:names:tc:SAML:2.0:bindings:HTTP-POST" Location="baseUrl/saml/SSO"/>
+    </SPSSODescriptor>
+</EntityDescriptor>

@@ -1,0 +1,32 @@
+{
+    "compilerOptions": {
+        "module": "commonjs",
+        "esModuleInterop": true,
+        "target": "es6",
+        "noImplicitAny": false,
+        "moduleResolution": "node",
+        "sourceMap": false,
+        "outDir": "./dist_test_app",
+        "baseUrl": ".",
+        "paths": {
+            "*": [
+                "node_modules/*",
+                "src/types/*"
+            ],
+            "@constants/*": ["src/constants/*"],
+            "@config/*": ["src/config/*"],
+            "@controllers/*": ["src/controllers/*"],
+            "@helpers/*": ["src/helpers/*"],
+            "@managers/*": ["src/managers/*"],
+            "@query/*": ["src/query/*"],
+            "@schema/*": ["src/schema/*"],
+            "@src/*":["src/*"]
+        },
+        "lib": [
+            "es2015"
+        ]
+    },
+    "include": [
+        "src/**/*"
+    ]
+}
