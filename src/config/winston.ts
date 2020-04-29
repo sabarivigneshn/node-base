@@ -18,8 +18,13 @@ const options = {
     colorize: true,
   },
 };
-
+const logformat = winston.format.combine(
+  winston.format.colorize(),
+  winston.format.timestamp(),
+  winston.format.printf(info => `${info.timestamp} ${info.level} ${info.message}`),
+)
 export const logger = winston.createLogger({
+  format: logformat,
   transports: [
     new winston.transports.File(options.file),
     new winston.transports.Console(options.console),
